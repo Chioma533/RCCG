@@ -5,7 +5,7 @@ import Home from './Pages/Home'
 import About from './Pages/About'
 import Ministries from './Pages/Ministries'
 import Sermons from './Pages/Sermons'
-import Events from './Pages/Events'
+import OurLeaders from './Pages/OurLeaders'
 import Contact from './Pages/Contact'
 import Donate from './Pages/Donate'
 
@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/ministries" element={<Ministries />} />
           <Route path="/sermons" element={<Sermons />} />
-          <Route path="/events" element={<Events />} />
+          <Route path="/our-leaders" element={<OurLeaders />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/donate" element={<Donate />} />
         </Routes>

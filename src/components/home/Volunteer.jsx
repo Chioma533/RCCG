@@ -44,7 +44,7 @@ const Volunteer = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <a
-                href="/contact"
+                href="https://forms.gle/bukV9DvjLgeJvUA76"
                 className="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-sm font-semibold rounded-full text-white bg-brand-blue hover:bg-opacity-95 shadow-md transition-all duration-200 hover:-translate-y-0.5"
               >
                 Volunteer now

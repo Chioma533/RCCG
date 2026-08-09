@@ -17,7 +17,7 @@ const AboutUs = () => {
       arrowColor: 'text-[#D97706]'
     },
     {
-      title: 'Our Mission', // keeping "Our Mission" exactly as written in the mockup
+      title: 'Our Vision', // keeping "Our Mission" exactly as written in the mockup
       description: 'To see a transformed world where every family is reached for Christ, lives are changed through the Gospel, and a Redeem church community exists in every nation.',
       bgColor: 'bg-bg-lavender',
       iconBgColor: 'bg-[#E1DDEC]',
@@ -26,7 +26,7 @@ const AboutUs = () => {
       arrowColor: 'text-[#4F46E5]'
     },
     {
-      title: 'Our Aim& Objective',
+      title: 'Our Aim & Objective',
       description: 'To make heaven and take as many people with us by living in holiness, growing in faith, and sharing the Gospel of Jesus Christ with every nation.',
       bgColor: 'bg-bg-sky',
       iconBgColor: 'bg-[#BAE6FD]',

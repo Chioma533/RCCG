@@ -13,8 +13,8 @@ const Navbar = () => {
     { name: 'About Us', path: '/about' },
     { name: 'Ministries', path: '/ministries' },
     { name: 'Sermons', path: '/sermons' },
-    { name: 'Events', path: '/events' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Our Leaders', path: '/our-leaders' },
   ]
 
   const isActive = (path) => {
@@ -31,8 +31,9 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
-              <img src={logoImg} alt="RCCG Logo" className="h-12 w-auto" />
+              <img src={logoImg} alt="RCCG Logo" className="h-25 w-auto" />
             </Link>
+            
           </div>
 
           {/* Desktop Nav Links */}

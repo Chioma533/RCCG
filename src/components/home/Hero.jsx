@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, ArrowRight, Play } from 'lucide-react'
-import heroBg from '../../assets/images/Hero.jpg'
+import heroBg from '../../assets/images/Hero2.jpg'
 
 const Hero = () => {
   return (
@@ -12,7 +12,7 @@ const Hero = () => {
         style={{ backgroundImage: `url('${heroBg}')` }}
       />
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-0" />
+      <div className="absolute inset-0 bg-black/40 z-0" />
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white flex flex-col items-center">
@@ -56,14 +56,16 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
         >
           <a
-            href="#join"
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-semibold rounded-full text-white bg-brand-blue hover:bg-opacity-95 shadow-md transition-all duration-200 hover:-translate-y-0.5"
           >
             Plan a visit
             <ArrowRight className="ml-2 h-4 w-4" />
           </a>
           <a
-            href="#live"
+            href="https://www.youtube.com/@rccgrehobothtx"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border-2 border-white/80 text-base font-semibold rounded-full text-white hover:bg-white hover:text-brand-dark transition-all duration-200 hover:-translate-y-0.5 backdrop-blur-sm bg-white/5"
           >
             Watch Live

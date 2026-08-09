@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import pastorImg from '../../assets/images/Pastor.png'
+import pastorImg from '../../assets/images/WelcomeImg.jpg'
 import waveImg from '../../assets/images/Group 3.png'
 
 const Welcome = () => {
@@ -63,7 +63,6 @@ const Welcome = () => {
             </motion.div>
           </div>
 
-          {/* Right Image Content (Pastor Adeboye in custom border frame) */}
           <div className="w-full lg:w-1/2 flex justify-center items-center relative">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -75,21 +74,20 @@ const Welcome = () => {
               <div className="rounded-2xl overflow-hidden border border-white/10 relative z-10 aspect-[4/5] bg-[#3B357A]">
                 <img 
                   src={pastorImg} 
-                  alt="Pastor Adeboye" 
+                  alt="No Image" 
                   className="w-full h-full object-cover object-top"
                 />
               </div>
             </motion.div>
           </div>
 
-          {/* Bottom Wave Border Ornament */}
           <div 
             className="absolute bottom-0 left-0 w-full h-6 pointer-events-none select-none"
             style={{
               backgroundImage: `url('${waveImg}')`,
               backgroundRepeat: 'repeat-x',
               backgroundPosition: 'bottom center',
-              backgroundSize: 'auto 16px'
+              backgroundSize: 'auto 30px'
             }}
           />
         </div>

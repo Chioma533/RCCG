@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Facebook, Twitter, Instagram } from 'lucide-react'
-import logoImg from '../assets/images/Logo.png'
+import logoImg from '../assets/images/Logo2.png'
 import waveImg from '../assets/images/Group 3.png'
 
 const Footer = () => {
@@ -11,9 +11,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Column 1: Logo & Socials */}
-          <div className="flex flex-col items-center md:items-start space-y-6">
-            <div className="bg-white/10 p-3 rounded-full backdrop-blur-sm inline-block">
-              <img src={logoImg} alt="RCCG Logo" className="h-16 w-auto brightness-110" />
+          <div className="flex flex-col items-center md:items-start  space-y-6">
+            <div className="flex ml-10 items-center rounded-full backdrop-blur-sm inline-block">
+              <img src={logoImg} alt="RCCG Logo" className="h-15 w-auto brightness-110 " />
             </div>
             <div className="flex space-x-5">
               <a
