@@ -3,7 +3,7 @@ import wavePattern from '../assets/images/Group 3.png';
 import aboutHeroBg from '../assets/images/aboutHero.jpg'; 
 import ourHistoryImg from '../assets/images/Hero2.jpg'; 
 import ourIdentityImg from '../assets/images/IdentityImg.jpg'; 
-import ourMissionImg from '../assets/images/ourMission2.jpg'; 
+import ourMissionImg from '../assets/images/OurMission2.jpg'; 
 
 // Additional assets that exist in the folder:
 import choirImg from '../assets/images/choir.jpg';
