@@ -6,18 +6,34 @@ import { Images } from '../constants/images'
 const OurLeaders = () => {
   const leaders = [
     {
-      name: 'Pastor Kola Adeleke',
-      role: 'Pastor-in-Charge',
-      description: 'Pastor Kola serves as the leading shepherd of RCCG Rehoboth Parish. Devoted to prayer, sound biblical teachings, and local community transformation, he guides the congregation with love, wisdom, and deep faith.',
-      img: Images.pastorImg
+      name: "Pastor Kola Adeleke",
+      role: "Pastor",
+      description:
+        "Pastor Kola serves as the leading shepherd of RCCG Rehoboth Parish. Devoted to prayer, sound biblical teachings, and local community transformation, he guides the congregation with love, wisdom, and deep faith.",
+      img: Images.pastorKola,
     },
     {
-      name: 'Pastor Cynthia',
-      role: 'Associate Pastor',
-      description: 'Pastor Cynthia coordinates youth ministries and outreach initiatives. She is passionate about helping young adults discover their purpose, build authentic relationships, and grow in their walk with Christ.',
-      img: Images.volunteerImg
-    }
-  ]
+      name: "Pastor Caroline Ogbode",
+      role: "Pastor in-Charge of Choir Dept, Sunday School Dept, and Young Adults & Youth Affairs",
+      description:
+        "Pastor Caroline Ogbode serves as a dedicated leader in various ministries, focusing on nurturing the spiritual growth of young people and fostering authentic relationships within the church community.",
+      img: Images.pastorCaroline,
+    },
+    {
+      name: "Pastor Sunday Ogbode",
+      role: "Pastor in-Charge of Ushering dept,School of Discipleship, Counseling dept, & Janitorial dept",
+      description:
+        "Pastor Sunday Ogbode serves as a dedicated leader in various ministries, focusing on nurturing the spiritual growth of young people and fostering authentic relationships within the church community.",
+      img: Images.pastorSunday,
+    },
+    {
+      name: "Pastor Cynthia",
+      role: "Associate Pastor",
+      description:
+        "Pastor Cynthia coordinates youth ministries and outreach initiatives. She is passionate about helping young adults discover their purpose, build authentic relationships, and grow in their walk with Christ.",
+      img: Images.volunteerImg,
+    },
+  ];
 
   return (
     <div className="flex flex-col min-h-screen bg-white">

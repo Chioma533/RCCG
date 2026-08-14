@@ -15,7 +15,7 @@ const JoinUs = () => {
       link: "/contact",
       schedule: [
         { label: "Sunday School", value: "10:00 AM - 10:45 AM" },
-        { label: "Celebration Service", value: "10:45 AM - 12:00 PM" },
+        { label: "Celebration Service", value: "10:45 AM - 12:30 PM" },
       ],
     },
     {
