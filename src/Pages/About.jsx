@@ -34,7 +34,7 @@ const About = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* 1. Hero Section */}
-      <section className="relative  min-h-[90vh]  flex items-center justify-center bg-black overflow-hidden">
+      <section className="relative  min-h-[90vh] flex items-center justify-center bg-black overflow-hidden">
         {/* Background Image with Blur & Dark Overlay */}
 
         <div
@@ -62,7 +62,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold mb-4 tracking-tight leading-[1.1] mb-6 max-w-4xl"
+            className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold mb-4 tracking-tight leading-[1.1] max-w-4xl"
           >
             ABOUT RCCG
             <br />
