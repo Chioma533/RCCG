@@ -15,14 +15,12 @@ import childrenImg from '../assets/images/children.png';
 import volunteerImg from '../assets/images/volunteer.png';
 import outreachImg from '../assets/images/volunteer2.jpg';
 import sermonPlaceholderBg from '../assets/images/Sermon1.jpg'
-import sermonPlaceholderBg2 from '../assets/images/Sermon2.jpg'
+import sermonPlaceholderBg2 from '../assets/images/sermon2.jpg'
 import sermonPlaceholderBg3 from '../assets/images/Sermon3.jpg'
 import pastorKola from '../assets/images/pastorKola.jpeg'
 import pastorCaroline from "../assets/images/pastorCaroline.jpeg";
 import pastorSunday from '../assets/images/pastorSunday.jpeg'
 import pastorFediora from "../assets/images/IsaacFediora.jpeg";
-
-
 
 
 import pastorImg from '../assets/images/Pastor.png';
