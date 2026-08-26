@@ -8,7 +8,12 @@ const Welcome = () => {
   return (
     <section className="py-16 bg-[#F3F4F6] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative bg-brand-blue text-white rounded-3xl overflow-hidden shadow-xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin:"-100px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="relative bg-brand-blue text-white rounded-3xl overflow-hidden shadow-xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Text Content */}
           <div className="w-full lg:w-1/2 flex flex-col items-start space-y-6 relative z-10">
             {/* Welcome Home Badge */}
@@ -67,10 +72,10 @@ const Welcome = () => {
 
           <div className="w-full lg:w-1/2 flex justify-center items-center relative">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="relative p-4 rounded-3xl border border-white/20 bg-white/5 backdrop-blur-sm max-w-[380px] w-full"
             >
               <div className="rounded-2xl overflow-hidden border border-white/10 relative z-10 aspect-[4/5] bg-[#3B357A]">
@@ -92,7 +97,7 @@ const Welcome = () => {
               backgroundSize: "auto 30px",
             }}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

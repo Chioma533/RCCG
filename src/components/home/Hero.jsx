@@ -36,7 +36,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-[650px] text-[3.5rem] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[4rem]"
+            className="max-w-162.5 text-[3.5rem] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[4rem]"
           >
             Welcome to RCCG
             <br />
@@ -48,7 +48,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-5 max-w-[430px] text-base font-normal leading-[1.45] text-white/90 sm:text-lg"
+            className="mt-5 max-w-107.5 text-base font-normal leading-[1.45] text-white/90 sm:text-lg"
           >
             Experience God's presence, grow in faith, and
             <br className="hidden sm:block" />

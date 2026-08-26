@@ -93,7 +93,7 @@ const Navbar = () => {
               alt="RCCG Rehoboth Parish"
               className={`
                 w-auto object-contain transition-all duration-300 
-                ${isScrolled ? "h-10" : "h-[38px]"}
+                ${isScrolled ? "h-10" : "h-9.5"}
               `}
             />
           </Link>
