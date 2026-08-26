@@ -29,7 +29,15 @@ const OurLeaders = () => {
     {
       name: "Pastor Isaac Fediora",
       role: "Associate Pastor",
-      description: "Pastor in-Charge of Prov/RG14, community outreach and elder ministry",
+      description:
+        "Pastor in-Charge of Prov/RG14, community outreach and elder ministry",
+      img: Images.pastorFediora,
+    },
+    {
+      name: "Sis. Toyin Adeleke",
+      role: "Associate Pastor",
+      description:
+        "Sister in charge of children church",
       img: Images.pastorFediora,
     },
   ];

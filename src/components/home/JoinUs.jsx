@@ -5,12 +5,13 @@ import logoImg from "../../assets/images/Logo.png";
 import worshipImg from "../../assets/images/Ellipse1.png";
 import bibleImg from "../../assets/images/Ellipse2.png";
 import prayerImg from "../../assets/images/Ellipse3.png";
+import {Images} from "../../constants/images"
 
 const JoinUs = () => {
   const cards = [
     {
       title: "Sunday Worship",
-      image: worshipImg,
+      image: Images.polygon1,
       buttonText: "Plan your visit",
       link: "/contact",
       schedule: [
@@ -20,7 +21,7 @@ const JoinUs = () => {
     },
     {
       title: "Bible Study",
-      image: bibleImg,
+      image: Images.polygon3,
       buttonText: "Join Bible study",
       link: "/ministries",
       schedule: [
@@ -38,7 +39,7 @@ const JoinUs = () => {
     },
     {
       title: "Prayer Service",
-      image: prayerImg,
+      image: Images.polygon2,
       buttonText: "Plan your visit",
       link: "/contact",
       schedule: [
@@ -49,19 +50,26 @@ const JoinUs = () => {
   ];
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {},
     visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
+      transition: {
+        staggerChildren: 0.15,
+      },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: {
+      opacity: 0,
+      y: 60,
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: {
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      },
     },
   };
 
@@ -90,10 +98,10 @@ const JoinUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-gray-600 text-sm sm:text-base"
+            className="text-gray-600 text-md sm:text-lg lg:text-xl leading-relaxed"
           >
-            We'd love to worship with you. Join us in person or online
-            throughout the week.
+            We'd love to worship with you. Join us in person or <br />
+            online throughout the week.
           </motion.p>
         </div>
 
@@ -102,45 +110,47 @@ const JoinUs = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          viewport={{
+            once: false,
+            amount: 0.25,
+          }}
+          className="grid grid-cols-1 gap-8 md:grid-cols-3"
         >
           {cards.map((card, idx) => (
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ y: -8 }}
-              className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
+              whileHover={{ y: -6 }}
+              className="flex h-full flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
             >
-              {/* Card Image with curved bottom mask */}
-              <div className="relative aspect-[4/3] overflow-hidden">
+              {/* Card Image */}
+              <div className="relative  overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className={`w-full h-full object-cover transition-transform duration-500  ${
-                    idx === 3 ? "rounded-b-[20%]" : "" // apply bottom curve manually for prayerImg since it is not an ellipse crop
-                  }`}
+                  className="h-full w-full object-cover transition-transform duration-500 "
                 />
               </div>
 
               {/* Card Body */}
-              <div className="p-6 sm:p-8 flex flex-col flex-grow">
-                {/* Title & Small CTA Button */}
-                <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-xl font-serif font-bold text-gray-900">
+              <div className="flex flex-grow flex-col p-6 sm:p-8">
+                {/* Title & CTA */}
+                <div className="mb-6 flex items-center justify-between gap-3">
+                  <h3 className="font-serif text-xl font-bold text-gray-900">
                     {card.title}
                   </h3>
-                  <button className="text-[11px] sm:text-xs font-semibold px-3 py-1.5 rounded-full bg-brand-blue/5 text-brand-blue hover:bg-brand-blue/10 transition-colors">
+
+                  <button className="shrink-0 rounded-full bg-brand-blue/5 px-3 py-1.5 text-[11px] font-semibold text-brand-blue transition-colors hover:bg-brand-blue/10 sm:text-xs">
                     {card.buttonText}
                   </button>
                 </div>
 
-                {/* Schedule details */}
-                <div className="space-y-4 flex-grow">
+                {/* Schedule */}
+                <div className="flex flex-grow flex-col space-y-4">
                   {card.schedule.map((item, itemIdx) => (
                     <div
                       key={itemIdx}
-                      className={`flex justify-between items-center py-2.5 ${
+                      className={`flex items-center justify-between gap-4 py-2.5 ${
                         itemIdx < card.schedule.length - 1
                           ? "border-b border-gray-100"
                           : ""
@@ -149,18 +159,19 @@ const JoinUs = () => {
                       <span className="text-sm font-medium text-gray-500">
                         {item.label}
                       </span>
+
                       {item.isLink ? (
                         <a
                           href={item.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm font-semibold text-brand-blue flex items-center hover:underline"
+                          className="flex items-center text-right text-sm font-semibold text-brand-blue hover:underline"
                         >
-                          <Video className="h-4 w-4 mr-1.5" />
+                          <Video className="mr-1.5 h-4 w-4" />
                           {item.value}
                         </a>
                       ) : (
-                        <span className="text-sm font-semibold text-gray-800 text-right">
+                        <span className="text-right text-sm font-semibold text-gray-800">
                           {item.value}
                         </span>
                       )}

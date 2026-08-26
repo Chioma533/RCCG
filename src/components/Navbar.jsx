@@ -1,52 +1,132 @@
-import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import logoImg from '../assets/images/Logo.png'
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import logoImg from "../assets/images/Logo2.png";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const location = useLocation()
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const location = useLocation();
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Ministries', path: '/ministries' },
-    { name: 'Sermons', path: '/sermons' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Our Leaders', path: '/our-leaders' },
-  ]
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Ministries", path: "/ministries" },
+    { name: "Sermons", path: "/sermons" },
+    { name: "Contact", path: "/contact" },
+    { name: "Our Leaders", path: "/our-leaders" },
+  ];
 
   const isActive = (path) => {
-    if (path === '/') {
-      return location.pathname === '/'
+    if (path === "/") {
+      return location.pathname === "/";
     }
-    return location.pathname.startsWith(path)
-  }
+
+    return location.pathname.startsWith(path);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 60);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <motion.nav
+      initial={false}
+      animate={{
+        backgroundColor: isScrolled
+          ? "rgba(255, 255, 255, 1)"
+          : "rgba(255, 255, 255, 0)",
+        boxShadow: isScrolled
+          ? "0 4px 20px rgba(0, 0, 0, 0.08)"
+          : "0 0 0 rgba(0, 0, 0, 0)",
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut",
+      }}
+      className={`
+        fixed left-0 right-0 top-0 z-50
+        transition-all duration-300
+        ${isScrolled ? "border-b border-gray-100" : "pointer-events-none"}
+      `}
+    >
+      <div
+        className={`
+          mx-auto w-full
+          transition-all duration-300
+          ${
+            isScrolled
+              ? "max-w-none px-4 sm:px-6 lg:px-10"
+              : "px-4 pt-5 sm:px-6 sm:pt-7"
+          }
+        `}
+      >
+        {/* Desktop Navbar */}
+        <div
+          className={`
+            hidden md:flex items-center
+            transition-all duration-300
+            ${
+              isScrolled
+                ? "h-[70px] w-full rounded-none border-0 bg-transparent px-2 shadow-none backdrop-blur-none"
+                : "mx-auto h-[58px] max-w-[720px] rounded-full border border-white/30 bg-white/15 px-5 shadow-lg backdrop-blur-lg"
+            }
+          `}
+        >
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex items-center">
-              <img src={logoImg} alt="RCCG Logo" className="h-25 w-auto" />
-            </Link>
-            
-          </div>
+          <Link
+            to="/"
+            className="pointer-events-auto flex shrink-0 items-center"
+          >
+            <img
+              src={logoImg}
+              alt="RCCG Rehoboth Parish"
+              className={`
+                w-auto object-contain transition-all duration-300 
+                ${isScrolled ? "h-10" : "h-[38px]"}
+              `}
+            />
+          </Link>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Navigation Links */}
+          <div
+            className={`
+              pointer-events-auto flex flex-1 items-center
+              transition-all duration-300
+              ${
+                isScrolled
+                  ? "ml-10 justify-center gap-9"
+                  : "ml-8 justify-between"
+              }
+            `}
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-brand-blue ${
-                  isActive(link.path)
-                    ? 'text-brand-blue font-semibold border-b-2 border-brand-blue py-1'
-                    : 'text-gray-600'
-                }`}
+                className={`
+                  whitespace-nowrap text-[15px] font-normal
+                  transition-colors duration-300
+                  ${
+                    isScrolled
+                      ? isActive(link.path)
+                        ? "font-medium text-gray-900"
+                        : "text-gray-600 hover:text-gray-900"
+                      : isActive(link.path)
+                        ? "text-white"
+                        : "text-white/90 hover:text-white"
+                  }
+                `}
               >
                 {link.name}
               </Link>
@@ -54,67 +134,140 @@ const Navbar = () => {
           </div>
 
           {/* Donate Button */}
-          <div className="hidden md:flex items-center">
-            <Link
-              to="/donate"
-              className="inline-flex items-center px-6 py-2.5 border border-transparent text-sm font-semibold rounded-full text-white bg-brand-blue hover:bg-opacity-90 shadow-sm transition-all duration-200 hover:-translate-y-0.5"
-            >
-              Donate now
-            </Link>
-          </div>
+          <Link
+            to="/donate"
+            className={`
+              pointer-events-auto inline-flex shrink-0 items-center
+              rounded-full bg-[#342477]
+              font-medium text-white shadow-md
+              transition-all duration-200
+              hover:-translate-y-0.5 hover:bg-[#2d1f69]
+              ${
+                isScrolled
+                  ? "ml-8 px-5 py-2.5 text-[12px]"
+                  : "ml-7 px-5 py-2.5 text-[12px]"
+              }
+            `}
+          >
+            Donate now
+          </Link>
+        </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none"
+        {/* Mobile Navbar */}
+        <div className="md:hidden">
+          <div
+            className={`
+              flex h-14 items-center justify-between
+              transition-all duration-300
+              ${
+                isScrolled
+                  ? "rounded-none border-0 bg-transparent px-0 shadow-none backdrop-blur-none"
+                  : "rounded-full border border-white/30 bg-white/15 px-4 shadow-lg backdrop-blur-lg"
+              }
+            `}
+          >
+            {/* Logo */}
+            <Link
+              to="/"
+              onClick={() => setIsOpen(false)}
+              className="pointer-events-auto flex items-center"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <img
+                src={logoImg}
+                alt="RCCG Rehoboth Parish"
+                className="h-9 w-9 object-contain"
+              />
+            </Link>
+
+            {/* Menu Button */}
+            <button
+              type="button"
+              onClick={() => setIsOpen(!isOpen)}
+              className={`
+                pointer-events-auto flex h-9 w-9
+                items-center justify-center rounded-full
+                transition-colors
+                ${
+                  isScrolled
+                    ? "text-gray-800 hover:bg-gray-100"
+                    : "text-white hover:bg-white/10"
+                }
+              `}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+            >
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </button>
           </div>
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                className={`
+                  mt-2 overflow-hidden rounded-2xl
+                  border p-3 shadow-xl
+                  backdrop-blur-xl
+                  ${
+                    isScrolled
+                      ? "border-gray-100 bg-white"
+                      : "border-white/20 bg-black/50"
+                  }
+                `}
+              >
+                <div className="space-y-1">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`
+                        block rounded-xl px-4 py-3 text-sm
+                        transition-colors
+                        ${
+                          isScrolled
+                            ? isActive(link.path)
+                              ? "bg-gray-100 font-medium text-gray-900"
+                              : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                            : isActive(link.path)
+                              ? "bg-white/10 text-white"
+                              : "text-white/80 hover:bg-white/10 hover:text-white"
+                        }
+                      `}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+
+                  <div
+                    className={`
+                      pt-2
+                      ${isScrolled ? "border-t border-gray-100" : ""}
+                    `}
+                  >
+                    <Link
+                      to="/donate"
+                      onClick={() => setIsOpen(false)}
+                      className="block rounded-full bg-[#342477] px-6 py-3 text-center text-sm font-medium text-white transition-all duration-200 hover:bg-[#2d1f69]"
+                    >
+                      Donate now
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
+    </motion.nav>
+  );
+};
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="md:hidden bg-white border-t border-gray-100"
-          >
-            <div className="px-4 pt-2 pb-6 space-y-3 shadow-inner">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2.5 rounded-md text-base font-medium transition-colors ${
-                    isActive(link.path)
-                      ? 'bg-brand-blue/5 text-brand-blue font-semibold'
-                      : 'text-gray-600 hover:bg-gray-50 hover:text-brand-blue'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <div className="pt-4 border-t border-gray-100 px-3">
-                <Link
-                  to="/donate"
-                  onClick={() => setIsOpen(false)}
-                  className="block w-full text-center px-6 py-3 border border-transparent text-base font-semibold rounded-full text-white bg-brand-blue hover:bg-opacity-90 shadow-sm transition-all duration-200"
-                >
-                  Donate now
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
-  )
-}
-
-export default Navbar
+export default Navbar;

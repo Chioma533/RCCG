@@ -1,103 +1,232 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Play, Volume2, Maximize, X } from 'lucide-react'
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, Radio } from "lucide-react";
 import BibleImg from "../../assets/images/Bible.png";
-import waveImg from '../../assets/images/Group 3.png'
-import sermonPlaceholderBg from '../../assets/images/Sermon1.jpg'
+import sermonPlaceholderBg from "../../assets/images/Sermon1.jpg";
 
 const LatestSermon = () => {
-  const youTubeChannelUrl = "https://www.youtube.com/@rccgrehobothtx/streams"; 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  const sermons = [
+    {
+      id: 1,
+      title: "Dealing with lust as a kingdom youth",
+      image: sermonPlaceholderBg,
+      link: "https://www.youtube.com/@rccgrehobothtx/streams",
+      isLive: true,
+    },
+    {
+      id: 2,
+      title: "Experience God’s Word Anytime, Anywhere",
+      image: sermonPlaceholderBg,
+      link: "https://www.youtube.com/@rccgrehobothtx/streams",
+      isLive: false,
+    },
+    {
+      id: 3,
+      title: "Growing Stronger in Faith",
+      image: sermonPlaceholderBg,
+      link: "https://www.youtube.com/@rccgrehobothtx/streams",
+      isLive: false,
+    },
+    {
+      id: 4,
+      title: "Walking in God’s Purpose",
+      image: sermonPlaceholderBg,
+      link: "https://www.youtube.com/@rccgrehobothtx/streams",
+      isLive: false,
+    },
+  ];
+
+  const nextSlide = () => {
+    setDirection(1);
+
+    setCurrentIndex((prev) => (prev === sermons.length - 1 ? 0 : prev + 1));
+  };
+
+  const previousSlide = () => {
+    setDirection(-1);
+
+    setCurrentIndex((prev) => (prev === 0 ? sermons.length - 1 : prev - 1));
+  };
+
+  // Automatic slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? "100%" : "-100%",
+      opacity: 0,
+    }),
+
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+
+    exit: (direction) => ({
+      x: direction > 0 ? "-100%" : "100%",
+      opacity: 0,
+    }),
+  };
+
+  const currentSermon = sermons[currentIndex];
 
   return (
     <section
       id="sermons"
-      className="py-24 bg-[#FAF9F6] relative overflow-hidden"
+      className="relative overflow-hidden bg-[#FAF9F6] py-14 sm:py-16"
     >
+      {/* Bible Watermark */}
       <div
-        className="absolute top-0 right-0 w-[450px] h-[450px] bg-no-repeat bg-contain opacity-[0.5] pointer-events-none translate-x-20 -translate-y-10 select-none z-0"
-        style={{ backgroundImage: `url('${BibleImg}')` }}
-      />
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-4"
-          >
-            Latest Sermon & Livestream
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-gray-600 text-sm sm:text-base"
-          >
-            Experience God's Word Anytime, Anywhere
-          </motion.p>
-        </div>
-
-        {/* Video Player Container */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8 }}
-          className="relative max-w-6xl mx-auto aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl bg-black border-4 border-white"
-        >
-          {/* Video Thumbnail (Pre-play) */}
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-102"
-            style={{ backgroundImage: `url('${sermonPlaceholderBg}')` }}
-          />
-          {/* Overlay to dim thumbnail */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/25 z-0" />
-
-          {/* Red Play Button in Center */}
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <motion.a
-              href={youTubeChannelUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Watch live sermons on YouTube"
-              className="w-16 h-11 sm:w-20 sm:h-14 bg-[#FF0000] hover:bg-[#CC0000] rounded-2xl flex items-center justify-center text-white shadow-xl transition-colors cursor-pointer border border-transparent focus:outline-none"
-            >
-              <Play className="h-6 w-6 fill-current ml-0.5" />
-            </motion.a>
-          </div>
-
-          {/* Bottom Topic Overlay */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] sm:w-auto z-10">
-            <div className="px-6 py-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-center">
-              <span className="text-white text-xs sm:text-sm font-semibold tracking-wide block sm:inline">
-                Topic: How to upgrade your finance in a christlike way
-              </span>
-            </div>
-          </div>
-
-          {/* Simulated Video Player Controls bar */}
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20 z-10" />
-        </motion.div>
-      </div>
-
-      {/* Repeating Wave Border Ornament at bottom */}
-      <div
-        className="absolute bottom-0 left-0 w-full h-8 pointer-events-none select-none"
+        className="pointer-events-none absolute right-0 top-0 z-0 h-[280px] w-[330px] translate-x-8 -translate-y-4 bg-contain bg-right-top bg-no-repeat opacity-[0.18]"
         style={{
-          backgroundImage: `url('${waveImg}')`,
-          backgroundRepeat: "repeat-x",
-          backgroundPosition: "bottom center",
-          backgroundSize: "auto 30px",
+          backgroundImage: `url('${BibleImg}')`,
         }}
       />
+
+      {/* Header */}
+      <div className="relative z-10 mx-auto mb-9 max-w-3xl px-4 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-4"
+        >
+          Latest Sermon & Livestream
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-gray-600 text-md sm:text-lg lg:text-xl leading-relaxed"
+        >
+          Experience God's Word Anytime, Anywhere
+        </motion.p>
+      </div>
+
+      {/* Slider */}
+      <div className="relative z-10 mx-auto w-full max-w-[1000px] px-4">
+        <div className="relative h-[400px] overflow-hidden rounded-2xl sm:h-[440px]">
+          <AnimatePresence initial={false} custom={direction} mode="sync">
+            <motion.div
+              key={currentSermon.id}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: {
+                  duration: 0.65,
+                  ease: [0.22, 1, 0.36, 1],
+                },
+                opacity: {
+                  duration: 0.35,
+                },
+              }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(_, info) => {
+                if (info.offset.x < -80) {
+                  nextSlide();
+                }
+
+                if (info.offset.x > 80) {
+                  previousSlide();
+                }
+              }}
+              className="absolute inset-0"
+            >
+              {/* Image */}
+              <img
+                src={currentSermon.image}
+                alt={currentSermon.title}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+
+              {/* Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+              {/* Live Indicator */}
+              {currentSermon.isLive && (
+                <div className="absolute left-8 top-8">
+                  <Radio className="h-10 w-10 text-red-500" strokeWidth={2.5} />
+                </div>
+              )}
+
+              {/* Previous */}
+              <button
+                type="button"
+                onClick={previousSlide}
+                aria-label="Previous sermon"
+                className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-all hover:bg-black/50 sm:left-6"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+
+              {/* Next */}
+              <button
+                type="button"
+                onClick={nextSlide}
+                aria-label="Next sermon"
+                className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-all hover:bg-black/50 sm:right-6"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+
+              {/* Bottom Content */}
+              <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-6 p-6 sm:p-8">
+                <h3 className="max-w-[65%] text-lg font-medium leading-tight text-white sm:text-2xl">
+                  {currentSermon.title}
+                </h3>
+
+                <a
+                  href={currentSermon.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 rounded-full bg-white px-5 py-2.5 text-xs font-medium text-gray-900 transition-all hover:bg-gray-100 sm:text-sm"
+                >
+                  Watch Sermon
+                </a>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Indicators */}
+        <div className="mt-5 flex justify-center gap-2">
+          {sermons.map((sermon, index) => (
+            <button
+              key={sermon.id}
+              type="button"
+              onClick={() => {
+                setDirection(index > currentIndex ? 1 : -1);
+                setCurrentIndex(index);
+              }}
+              aria-label={`Go to sermon ${index + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? "w-7 bg-brand-blue"
+                  : "w-2 bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
-}
+};
 
-export default LatestSermon
+export default LatestSermon;

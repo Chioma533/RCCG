@@ -21,12 +21,18 @@ import pastorKola from '../assets/images/pastorKola.jpeg'
 import pastorCaroline from "../assets/images/pastorCaroline.jpeg";
 import pastorSunday from '../assets/images/pastorSunday.jpeg'
 import pastorFediora from "../assets/images/IsaacFediora.jpeg";
-
+import bible2 from "../assets/images/Bible2.jpg"
+import homeHero from "../assets/images/homeHero.jpg"
+import polygon1 from "../assets/images/Polygon1.png";
+import polygon2 from "../assets/images/Polygon2.png";
+import polygon3 from "../assets/images/Polygon3.png";
 
 import pastorImg from '../assets/images/Pastor.png';
 import bibleImg from '../assets/images/Bible.png';
 
 export const Images = {
+  bible2,
+  homeHero,
   donateIllustration,
   wavePattern,
   aboutHeroBg,
@@ -52,5 +58,7 @@ export const Images = {
   pastorCaroline,
   pastorSunday,
   pastorFediora,
-
+  polygon1,
+  polygon2,
+  polygon3  
 };

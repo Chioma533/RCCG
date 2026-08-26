@@ -8,9 +8,7 @@ const Welcome = () => {
   return (
     <section className="py-16 bg-[#F3F4F6] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Banner Container */}
         <div className="relative bg-brand-blue text-white rounded-3xl overflow-hidden shadow-xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12">
-          
           {/* Left Text Content */}
           <div className="w-full lg:w-1/2 flex flex-col items-start space-y-6 relative z-10">
             {/* Welcome Home Badge */}
@@ -43,7 +41,11 @@ const Welcome = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-gray-300 text-sm sm:text-base leading-relaxed font-light"
             >
-              At RCCG Rehoboth Parish, we are a Christ-centered family committed to knowing God, growing in faith, and sharing His love with our community and the world. Through worship, prayer, fellowship, and the teaching of God's Word, we seek to raise a generation that reflects Christ and lives with purpose.
+              At RCCG Rehoboth Parish, we are a Christ-centered family committed
+              to knowing God, growing in faith, and sharing His love with our
+              community and the world. Through worship, prayer, fellowship, and
+              the teaching of God's Word, we seek to raise a generation that
+              reflects Christ and lives with purpose.
             </motion.p>
 
             {/* CTA Button */}
@@ -72,28 +74,28 @@ const Welcome = () => {
               className="relative p-4 rounded-3xl border border-white/20 bg-white/5 backdrop-blur-sm max-w-[380px] w-full"
             >
               <div className="rounded-2xl overflow-hidden border border-white/10 relative z-10 aspect-[4/5] bg-[#3B357A]">
-                <img 
-                  src={pastorImg} 
-                  alt="No Image" 
+                <img
+                  src={pastorImg}
+                  alt="No Image"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
             </motion.div>
           </div>
 
-          <div 
+          <div
             className="absolute bottom-0 left-0 w-full h-6 pointer-events-none select-none"
             style={{
               backgroundImage: `url('${waveImg}')`,
-              backgroundRepeat: 'repeat-x',
-              backgroundPosition: 'bottom center',
-              backgroundSize: 'auto 30px'
+              backgroundRepeat: "repeat-x",
+              backgroundPosition: "bottom center",
+              backgroundSize: "auto 30px",
             }}
           />
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Welcome
