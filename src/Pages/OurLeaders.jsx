@@ -43,7 +43,7 @@ const OurLeaders = () => {
       name: "Pastor Dokpe Adeleke",
       role: "Associate Pastor",
       description: "Pastor in charge of women of virtue and children church",
-      img: Images.pastorToyin,
+      img: Images.pastorDokpe,
     },
   ];
 

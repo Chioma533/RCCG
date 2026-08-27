@@ -117,7 +117,7 @@ const Footer = () => {
                 <span className="font-semibold block text-white/80">
                   Address: {" "}
                   <span className="font-medium">
-                    3305 Pleasant Valley Ln, Suite B, Arlington, TX 76015
+                    3305 Pleasant Valley Ln, Arlington, TX 76015
                   </span>
                 </span>
               </li>
@@ -133,7 +133,7 @@ const Footer = () => {
                   Email:{" "}
                   <span className="font-medium">
                     {" "}
-                    rccgrehobothparisharlingtontx@gmail.com
+                    rccgrehoboth3305@gmail.com
                   </span>
                 </span>
               </li>
