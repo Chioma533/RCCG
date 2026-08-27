@@ -86,7 +86,7 @@ const Ministries = () => {
               key={idx}
               variants={cardVariants}
               whileHover={{ y: -8 }}
-              className="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5] group"
+              className="relative rounded-2xl overflow-hidden shadow-lg aspect-4/3 group"
             >
               {/* Background image */}
               <img
@@ -96,7 +96,7 @@ const Ministries = () => {
               />
 
               {/* Dark gradient overlay for text legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/10" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-black/10" />
 
               {/* Badge */}
               <div className="absolute top-5 left-5">
