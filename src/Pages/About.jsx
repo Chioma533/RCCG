@@ -44,8 +44,7 @@ const About = () => {
         />
         <div className="absolute inset-0 bg-black/20" />
 
-        {/* Content Container */}
-        <div className="relative z-10 flex min-h-screen items-center justify-center px-4 pt-24 pb-16 sm:px-6">
+        <div className="relative z-10 flex min-h-screen items-center justify-center px-4 pt-18 pb-16 sm:px-6">
           <div className="flex w-full max-w-4xl flex-col items-center text-center text-white">
             {/* About Us Tag */}
             <motion.div
@@ -113,7 +112,7 @@ const About = () => {
           {cards.map((card, index) => (
             <motion.div
               key={card.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{
                 once: false,

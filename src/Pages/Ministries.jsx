@@ -78,7 +78,7 @@ const Ministries = () => {
         <div className="absolute inset-0 bg-black/20" />
 
         {/* Content */}
-        <div className="relative z-10 flex min-h-screen items-center justify-center px-4 pt-24 pb-16 sm:px-6">
+        <div className="relative z-10 flex min-h-screen items-center justify-center px-4 pt-18 pb-16 sm:px-6">
           <div className="flex w-full max-w-4xl flex-col items-center text-center text-white">
             <motion.div
               initial={{ opacity: 0, y: -20 }}

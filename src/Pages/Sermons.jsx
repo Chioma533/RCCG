@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Play, Volume2, Maximize, X, ArrowRight } from 'lucide-react'
-import { Images } from '../constants/images'
-import LatestSermon from '../components/home/LatestSermon';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Play, Volume2, Maximize, X, ArrowRight } from "lucide-react";
+import { Images } from "../constants/images";
+import LatestSermon from "../components/home/LatestSermon";
 
 const Sermons = () => {
- const youTubeChannelUrl = "https://www.youtube.com/@rccgrehobothtx/streams";
+  const youTubeChannelUrl = "https://www.youtube.com/@rccgrehobothtx/streams";
 
   const exploreSermons = [
     {
@@ -36,62 +36,64 @@ const Sermons = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url('${Images.sermonPlaceholderBg}')` }}
         />
-        <div className="absolute inset-0 bg-black/30 z-10" />
+        <div className="absolute inset-0 bg-black/20" />
 
         {/* Content */}
-        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center space-x-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg mb-8"
-          >
-            <span className="text-sm font-medium tracking-wide">
-              Sermons & Messages
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-7.5xl font-serif font-bold text-white mb-6 tracking-tight leading-[1.2] max-w-4xl"
-          >
-            Grow Through God's Word
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-base sm:text-lg lg:text-xl text-gray-200/90 font-normal max-w-2xl leading-relaxed mb-10"
-          >
-            Watch and listen to messages from RCCG Rehoboth Parish and stay
-            connected with God's Word wherever you are.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto justify-center"
-          >
-            <a
-              href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold text-white bg-[#2B1B67] hover:bg-[#1E124B] shadow-lg transition-all duration-200 hover:-translate-y-0.5"
+        <div className="relative z-10 flex min-h-screen items-center justify-center px-4 pt-18 pb-16 sm:px-6">
+          <div className="flex w-full max-w-4xl flex-col items-center text-center text-white">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 shadow-lg backdrop-blur-md"
             >
-              Plan a visit
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-            <a
-              href={youTubeChannelUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border-2 border-white/80 text-base font-semibold rounded-full text-white hover:bg-white hover:text-brand-dark transition-all duration-200 hover:-translate-y-0.5 backdrop-blur-sm bg-white/5"
+              <span className="text-sm font-normal tracking-wide">
+                Sermons & Messages
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl sm:text-5xl lg:text-7.5xl font-serif font-bold text-white mb-6 tracking-tight leading-[1.2] max-w-4xl"
             >
-              Watch Live
-              <Play className="ml-2 h-4 w-4 fill-current" />
-            </a>
-          </motion.div>
+              Grow Through God's Word
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mt-5 max-w-150 text-base font-normal leading-[1.45] text-white/90 sm:text-lg"
+            >
+              Watch and listen to messages from RCCG Rehoboth Parish and stay
+              connected with God's Word wherever you are.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, delay: 0.6 }}
+              className="mt-9 flex items-center justify-center gap-3"
+            >
+              <a
+                href="/contact"
+                className="inline-flex h-11 items-center justify-center rounded-full bg-[#342477] px-6 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2d1f69]"
+              >
+                Plan a visit
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+              <a
+                href={youTubeChannelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-11 items-center justify-center rounded-full border border-white/50 bg-white/5 px-6 text-sm font-medium text-white backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/10"
+              >
+                Watch Live
+                <Play className="ml-2 h-4 w-4 fill-current" />
+              </a>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -119,7 +121,7 @@ const Sermons = () => {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md border border-gray-100/60 p-4 space-y-4"
               >
-                <div className="relative rounded-xl overflow-hidden aspect-[16/10] bg-gray-100 group cursor-pointer">
+                <div className="relative rounded-xl overflow-hidden aspect-16/10 bg-gray-100 group cursor-pointer">
                   <img
                     src={sermon.img}
                     alt={sermon.title}
@@ -162,9 +164,7 @@ const Sermons = () => {
             transition={{ duration: 0.7 }}
             className="bg-red-500 rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden relative shadow-lg"
           >
-         
             <div className="absolute -right-10 -bottom-10 w-96 h-96 rounded-full bg-red-600/35 pointer-events-none" />
-
 
             <div className="w-full lg:w-3/5 space-y-6 relative z-10 flex flex-col items-start">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
@@ -203,6 +203,6 @@ const Sermons = () => {
       </section>
     </div>
   );
-}
+};
 
-export default Sermons
+export default Sermons;
