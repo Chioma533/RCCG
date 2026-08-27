@@ -8,7 +8,7 @@ const Contact = () => {
     <div className="flex flex-col min-h-screen bg-white">
       <section className="relative  min-h-[90vh] flex items-center justify-center bg-black overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-top bg-no-repeat"
           style={{ backgroundImage: `url('${Images.contactHero}')` }}
         />
         <div className="absolute inset-0 bg-black/20" />
@@ -54,7 +54,7 @@ const Contact = () => {
               className="mt-9 flex items-center justify-center gap-3"
             >
               <a
-                href="https://maps.app.goo.gl/23aB4UJddEPmGQ8n8"
+                href="https://maps.app.goo.gl/AvbNue8pP91bfQb2A"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-11 items-center justify-center rounded-full bg-[#342477] px-6 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2d1f69]"

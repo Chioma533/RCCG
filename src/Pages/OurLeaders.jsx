@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Phone } from "lucide-react";
+import { ArrowRight} from "lucide-react";
 import { Images } from "../constants/images";
 
 const OurLeaders = () => {
@@ -37,7 +37,13 @@ const OurLeaders = () => {
       name: "Sis. Toyin Adeleke",
       role: "Associate Pastor",
       description: "Sister in charge of children church",
-      img: Images.pastorFediora,
+      img: Images.pastorToyin,
+    },
+    {
+      name: "Pastor Dokpe Adeleke",
+      role: "Associate Pastor",
+      description: "Pastor in charge of women of virtue and children church",
+      img: Images.pastorToyin,
     },
   ];
 

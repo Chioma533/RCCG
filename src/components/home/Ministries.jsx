@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import choirImg from "../../assets/images/choir.jpg";
+import { Images } from "../../constants/images";
 import mediaImg from "../../assets/images/media.png";
 import childrenImg from "../../assets/images/children.png";
 
@@ -9,19 +9,19 @@ const Ministries = () => {
   const ministriesList = [
     {
       badge: "The choir",
-      image: choirImg,
+      image: Images.choirImg,
       description:
         "Our choir leads worship through music, creating an atmosphere for encountering God's presence.",
     },
     {
       badge: "The Media",
-      image: mediaImg,
+      image: Images.mediaImg,
       description:
         "The Media Team uses creativity and technology to share God's word's through visuals, sound, and  photography",
     },
     {
       badge: "Children's Church",
-      image: childrenImg,
+      image: Images.ministryHero,
       description:
         "Children's Church provides a fun, safe, and engaging space where children can learn about God and grow in faith.",
     },

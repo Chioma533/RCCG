@@ -5,14 +5,21 @@ import { Images } from "../../constants/images";
 const Hero = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-black">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('${Images.homeHero}')` }}
-      />
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      >
+        <source src={Images.heroVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-black/10" />
 
       {/* Hero Content */}
       <div className="relative z-10 flex min-h-screen items-center justify-center px-4 pt-18 pb-16 sm:px-6">

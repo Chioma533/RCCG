@@ -9,7 +9,7 @@ import menImpact from '../assets/images/ourMission.jpg';
 import youthMinistry from "../assets/images/YAYA.jpg";
 import virtueousWomen from "../assets/images/women.jpg"
 import contactHero from "../assets/images/contactHero.jpg"
-import choirImg from '../assets/images/choir.jpg';
+import choirImg from '../assets/images/choir2.jpg';
 import mediaImg from '../assets/images/media.png';
 import childrenImg from '../assets/images/children.png';
 import volunteerImg from '../assets/images/volunteer.png';
@@ -21,17 +21,22 @@ import pastorKola from '../assets/images/pastorKola.jpeg'
 import pastorCaroline from "../assets/images/pastorCaroline.jpeg";
 import pastorSunday from '../assets/images/pastorSunday.jpeg'
 import pastorFediora from "../assets/images/IsaacFediora.jpeg";
+import pastorToyin from "../assets/images/toyinAdeleke.jpg";
+
 import bible2 from "../assets/images/Bible2.jpg"
 import homeHero from "../assets/images/homeHero.jpg"
 import polygon1 from "../assets/images/Polygon1.png";
 import polygon2 from "../assets/images/Polygon2.png";
 import polygon3 from "../assets/images/Polygon3.png";
 import ministrycard from "../assets/images/ministrycard.jpg"
+import heroVideo from "../assets/videos/heroVideo.mp4"
 
 import pastorImg from '../assets/images/Pastor.png';
 import bibleImg from '../assets/images/Bible.png';
 
 export const Images = {
+   heroVideo,
+  pastorToyin,
   ministrycard,
   bible2,
   homeHero,
