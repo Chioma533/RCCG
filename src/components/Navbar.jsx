@@ -55,10 +55,10 @@ const Navbar = () => {
         ease: "easeInOut",
       }}
       className={`
-        fixed left-0 right-0 top-0 z-50
-        transition-all duration-300
-        ${isScrolled ? "border-b border-gray-100" : "pointer-events-none"}
-      `}
+  fixed left-0 right-0 top-0 z-50 
+  transition-all duration-300
+  ${isScrolled ? "border-b border-gray-100" : ""}
+`}
     >
       <div
         className={`
