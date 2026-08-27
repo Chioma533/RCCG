@@ -191,7 +191,7 @@ const Ministries = () => {
             <motion.div
               variant={cardVariants}
               whileHover={{ y: -8 }}
-              className="lg:col-span-2 relative rounded-3xl shadow-lg overflow-hidden"
+              className="lg:col-span-2 relative rounded-3xl shadow-lg overflow-hidden aspect-4/3 md:aspect-8/3"
             >
               <img
                 src={Images.ministrycard}
