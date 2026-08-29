@@ -1,49 +1,44 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Images } from "../constants/images";
 
 const OurLeaders = () => {
   const leaders = [
     {
-      name: "Pastor Kola Adeleke",
-      role: "Pastor",
-      description:
-        "Pastor Kola serves as the leading shepherd of RCCG Rehoboth Parish. Devoted to prayer, sound biblical teachings, and local community transformation, he guides the congregation with love, wisdom, and deep faith.",
-      img: Images.pastorKola,
-    },
-    {
-      name: "Pastor Caroline Ogbode",
-      role: "Pastor in-Charge of Choir Dept, Sunday School Dept, and Young Adults & Youth Affairs",
-      description:
-        "Pastor in-Charge of Choir Dept, Sunday School Dept, and Young Adults & Youth Affairs",
-      img: Images.pastorCaroline,
-    },
-    {
-      name: "Pastor Sunday Ogbode",
-      role: "Pastor in-Charge of Ushering dept,School of Discipleship, Counseling dept, & Janitorial dept",
-      description:
-        "Pastor in-Charge of Ushering dept,School of Discipleship, Counseling dept, & Janitorial dept",
-      img: Images.pastorSunday,
-    },
-    {
       name: "Pastor Isaac Fediora",
-      role: "Associate Pastor",
       description:
         "Pastor in-Charge of Prov/RG14, community outreach and elder ministry",
       img: Images.pastorFediora,
     },
     {
-      name: "Sis. Toyin Adeleke",
-      role: "Associate Pastor",
-      description: "Sister in charge of children church",
-      img: Images.pastorToyin,
+      name: "Pastor Kola Adeleke",
+      description:
+        "Pastor Kola serves as the leading shepherd of RCCG Rehoboth Parish. ",
+      img: Images.pastorKola,
     },
+
     {
       name: "Pastor Dokpe Adeleke",
-      role: "Associate Pastor",
       description: "Pastor in charge of women of virtue and children church",
       img: Images.pastorDokpe,
+    },
+    {
+      name: "Pastor Sunday Ogbode",
+      description:
+        "Pastor in-Charge of Ushering dept, School of Discipleship, Counseling dept, & Janitorial dept",
+      img: Images.pastorSunday,
+    },
+    {
+      name: "Pastor Caroline Ogbode",
+      description:
+        "Pastor in-Charge of Choir Dept, Sunday School Dept, and Young Adults & Youth Affairs",
+      img: Images.pastorCaroline,
+    },
+    {
+      name: "Sis. Toyin Adeleke",
+      description: "Sister in charge of children church",
+      img: Images.pastorToyin,
     },
   ];
 
@@ -51,14 +46,12 @@ const OurLeaders = () => {
     <div className="flex flex-col min-h-screen bg-white">
       {/* 1. Hero Section */}
       <section className="relative  min-h-[90vh] flex items-center justify-center bg-black overflow-hidden">
-        {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url('${Images.aboutHeroBg}')` }}
         />
         <div className="absolute inset-0 bg-black/20" />
 
-        {/* Content */}
         <div className="relative z-10 flex min-h-screen items-center justify-center px-4 pt-18 pb-16 sm:px-6">
           <div className="flex w-full max-w-4xl flex-col items-center text-center text-white">
             <motion.div
@@ -119,18 +112,18 @@ const OurLeaders = () => {
       {/* 2. Leaders Grid Section */}
       <section className="py-24 bg-[#F9FAFB]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {leaders.map((leader, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="bg-white border border-gray-100 shadow-sm rounded-3xl p-6 sm:p-8 flex flex-col items-center text-center space-y-6 max-w-[440px] w-full"
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className="flex flex-col items-center text-center space-y-4"
               >
                 {/* Profile Photo */}
-                <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full border-4 border-gray-100 shadow-md overflow-hidden bg-gray-50 flex items-center justify-center">
+                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-white shadow-md overflow-hidden bg-gray-100 flex items-center justify-center">
                   <img
                     src={leader.img}
                     alt={leader.name}
@@ -140,18 +133,13 @@ const OurLeaders = () => {
 
                 {/* Details */}
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-serif font-bold text-gray-900">
+                  <h3 className="text-lg font-serif font-bold text-gray-900">
                     {leader.name}
                   </h3>
-                  {/* <div className="px-3.5 py-1 bg-[#2B1B67]/5 text-[#2B1B67] rounded-full text-xs font-semibold uppercase tracking-wider inline-block">
-                    {leader.role}
-                  </div> */}
+                  <p className="text-gray-600 text-sm leading-relaxed font-light max-w-[260px] mx-auto">
+                    {leader.description}
+                  </p>
                 </div>
-
-                {/* Bio text */}
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-light">
-                  {leader.description}
-                </p>
               </motion.div>
             ))}
           </div>

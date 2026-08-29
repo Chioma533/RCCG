@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Radio } from "lucide-react";
 import BibleImg from "../../assets/images/Bible.png";
-import sermonPlaceholderBg from "../../assets/images/Sermon1.jpg";
+import {Images} from "../../constants/images"
 
 const LatestSermon = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,29 +12,29 @@ const LatestSermon = () => {
     {
       id: 1,
       title: "Dealing with lust as a kingdom youth",
-      image: sermonPlaceholderBg,
-      link: "https://www.youtube.com/@rccgrehobothtx/streams",
+      image: Images.sermonPlaceholderBg,
+      link: "https://www.youtube.com/live/0-DwzjZ0NjI?si=Ehf9e065od3mi2y9",
       isLive: true,
     },
     {
       id: 2,
       title: "Experience God’s Word Anytime, Anywhere",
-      image: sermonPlaceholderBg,
-      link: "https://www.youtube.com/@rccgrehobothtx/streams",
+      image: Images.sermonPlaceholderBg2,
+      link: "https://www.youtube.com/live/VW5DpF0BCog?si=MNXrNk9o6L1f078H",
       isLive: false,
     },
     {
       id: 3,
       title: "Growing Stronger in Faith",
-      image: sermonPlaceholderBg,
-      link: "https://www.youtube.com/@rccgrehobothtx/streams",
+      image: Images.sermonPlaceholderBg3,
+      link: "https://www.youtube.com/live/Z8TRgGtQ7wo?si=oWDhw88ZZE8Jyrd-",
       isLive: false,
     },
     {
       id: 4,
       title: "Walking in God’s Purpose",
-      image: sermonPlaceholderBg,
-      link: "https://www.youtube.com/@rccgrehobothtx/streams",
+      image: Images.sermonPlaceholderBg,
+      link: "https://www.youtube.com/live/m4w68SqPjG0?si=F5EYs9DfdOdMQD74",
       isLive: false,
     },
   ];

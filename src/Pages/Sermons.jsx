@@ -11,20 +11,23 @@ const Sermons = () => {
     {
       title: "Dealing with lust as a youth",
       preacher: "Pastor Cynthia",
-      date: "Sunday, Jun 30 2026",
-      img: Images.sermonPlaceholderBg3,
+      date: "Sunday, Aug 23 2026",
+      img: Images.sermonPlaceholderBg,
+      url: "https://www.youtube.com/live/0-DwzjZ0NjI?si=Ehf9e065od3mi2y9",
     },
     {
       title: "Dealing with lust as a youth",
       preacher: "Pastor Cynthia",
-      date: "Sunday, Jun 30 2026",
-      img: Images.sermonPlaceholderBg3,
+      date: "Sunday, Aug 16 2026",
+      img: Images.sermonPlaceholderBg2,
+      url: "https://www.youtube.com/live/VW5DpF0BCog?si=MNXrNk9o6L1f078H",
     },
     {
       title: "Dealing with lust as a youth",
       preacher: "Pastor Cynthia",
-      date: "Sunday, Jun 30 2026",
+      date: "Sunday, Aug 9 2026",
       img: Images.sermonPlaceholderBg3,
+      url: "https://www.youtube.com/live/Z8TRgGtQ7wo?si=oWDhw88ZZE8Jyrd-",
     },
   ];
 
@@ -129,9 +132,10 @@ const Sermons = () => {
                   />
                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                     <motion.a
-                      href={youTubeChannelUrl}
+                      href={sermon.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Watch ${sermon.title}`}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       className="w-10 h-10 rounded-lg bg-red-600 flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform"

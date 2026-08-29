@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const location = useLocation();
+  const isDonatePage = location.pathname === "/donate";
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -115,18 +116,22 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className={`
-                  whitespace-nowrap text-[15px] font-normal
-                  transition-colors duration-300
-                  ${
-                    isScrolled
-                      ? isActive(link.path)
-                        ? "font-medium text-gray-900"
-                        : "text-gray-600 hover:text-gray-900"
-                      : isActive(link.path)
-                        ? "text-white"
-                        : "text-white/90 hover:text-white"
-                  }
-                `}
+  whitespace-nowrap text-[15px] font-normal
+  transition-colors duration-300
+  ${
+    isDonatePage
+      ? isActive(link.path)
+        ? "font-medium text-blue-600"
+        : "text-gray-800 hover:text-black"
+      : isScrolled
+        ? isActive(link.path)
+          ? "font-medium text-blue-600"
+          : "text-blue-600 hover:text-gray-900"
+        : isActive(link.path)
+          ? "text-blue-600"
+          : "text-white/90 hover:text-white"
+  }
+`}
               >
                 {link.name}
               </Link>
@@ -187,11 +192,13 @@ const Navbar = () => {
                 pointer-events-auto flex h-9 w-9
                 items-center justify-center rounded-full
                 transition-colors
-                ${
-                  isScrolled
-                    ? "text-gray-800 hover:bg-gray-100"
-                    : "text-white hover:bg-white/10"
-                }
+              ${
+  isDonatePage
+    ? "text-black hover:bg-gray-100"
+    : isScrolled
+      ? "text-gray-800 hover:bg-gray-100"
+      : "text-white hover:bg-white/10"
+}
               `}
               aria-label={isOpen ? "Close menu" : "Open menu"}
             >
