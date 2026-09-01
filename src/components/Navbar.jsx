@@ -121,14 +121,14 @@ const Navbar = () => {
   ${
     isDonatePage
       ? isActive(link.path)
-        ? "font-medium text-blue-600"
+        ? "font-medium text-blue-800"
         : "text-gray-800 hover:text-black"
       : isScrolled
         ? isActive(link.path)
-          ? "font-medium text-blue-600"
-          : "text-blue-600 hover:text-gray-900"
+          ? "font-medium text-blue-800"
+          : "text-gray-800 hover:text-gray-900"
         : isActive(link.path)
-          ? "text-blue-600"
+          ? "text-blue-800"
           : "text-white/90 hover:text-white"
   }
 `}

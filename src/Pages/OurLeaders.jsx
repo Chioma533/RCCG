@@ -6,23 +6,23 @@ import { Images } from "../constants/images";
 const OurLeaders = () => {
   const leaders = [
     {
-      name: "Pastor Isaac Fediora",
-      description:
-        "Pastor in-Charge of Prov/RG14, community outreach and elder ministry",
-      img: Images.pastorFediora,
-    },
-    {
       name: "Pastor Kola Adeleke",
       description:
         "Pastor Kola serves as the leading shepherd of RCCG Rehoboth Parish. ",
       img: Images.pastorKola,
     },
-
-    {
+     {
       name: "Pastor Dokpe Adeleke",
       description: "Pastor in charge of women of virtue and children church",
       img: Images.pastorDokpe,
     },
+    {
+      name: "Pastor Isaac Fediora",
+      description:
+        "Pastor in-Charge of Prov/RG14, community outreach and elder ministry",
+      img: Images.pastorFediora,
+    },
+   
     {
       name: "Pastor Sunday Ogbode",
       description:
