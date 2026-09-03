@@ -11,10 +11,36 @@ const OurLeaders = () => {
         "Pastor Kola serves as the leading shepherd of RCCG Rehoboth Parish. ",
       img: Images.pastorKola,
     },
-     {
+    {
+      name: "Mr. and Mrs. Omodele",
+      description: "Head of welfare Department",
+      img: Images.mrOmodele,
+    },
+    {
+      name: "Mrs. Omodele",
+      description: "Head of welfare Department",
+      img: Images.mrsOmodele,
+    },
+    {
       name: "Pastor Dokpe Adeleke",
       description: "Pastor in charge of women of virtue and children church",
       img: Images.pastorDokpe,
+    },
+    {
+      name: "Pastor Rita Nkem",
+      description: "Head of Women of virtue Department",
+      img: Images.ritaNkem,
+    },
+    {
+      name: "Sis. Toyin Adeleke",
+      description: "Sister in charge of children church",
+      img: Images.pastorToyin,
+    },
+    {
+      name: "Elder David Adedokun",
+      description:
+        "Pastor in charge of Men of impact, Media/Technology and inter church relationship",
+      img: Images.davidAdedokun,
     },
     {
       name: "Pastor Isaac Fediora",
@@ -22,7 +48,7 @@ const OurLeaders = () => {
         "Pastor in-Charge of Prov/RG14, community outreach and elder ministry",
       img: Images.pastorFediora,
     },
-   
+
     {
       name: "Pastor Sunday Ogbode",
       description:
@@ -34,11 +60,6 @@ const OurLeaders = () => {
       description:
         "Pastor in-Charge of Choir Dept, Sunday School Dept, and Young Adults & Youth Affairs",
       img: Images.pastorCaroline,
-    },
-    {
-      name: "Sis. Toyin Adeleke",
-      description: "Sister in charge of children church",
-      img: Images.pastorToyin,
     },
   ];
 
@@ -127,7 +148,7 @@ const OurLeaders = () => {
                   <img
                     src={leader.img}
                     alt={leader.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-fit"
                   />
                 </div>
 

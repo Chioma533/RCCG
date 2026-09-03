@@ -15,7 +15,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Ministries", path: "/ministries" },
-    { name: "Sermons", path: "/sermons" },
+    { name: "Live Stream", path: "/livestream" },
     { name: "Contact", path: "/contact" },
     { name: "Our Leaders", path: "/our-leaders" },
   ];

@@ -31,6 +31,13 @@ import polygon2 from "../assets/images/Polygon2.png";
 import polygon3 from "../assets/images/Polygon3.png";
 import ministrycard from "../assets/images/ministrycard.jpg";
 import heroVideo from "../assets/videos/heroVideo.mp4";
+import mrsOmodele from "../assets/images/mrsOmodele.jpg"
+import mrOmodele from "../assets/images/mrOmodele.jpg"
+import davidAdedokun from "../assets/images/davidAdedokun.jpg";
+import dokpeAdeleke from "../assets/images/dokpeAdeleke.jpg";
+import ritaNkem from "../assets/images/RitaNkem.jpg";
+
+
 
 import pastorImg from "../assets/images/Pastor.png";
 import bibleImg from "../assets/images/Bible.png";
@@ -70,4 +77,9 @@ export const Images = {
   polygon1,
   polygon2,
   polygon3,
+  dokpeAdeleke,
+  davidAdedokun,
+  mrOmodele,
+  mrsOmodele,
+  ritaNkem,
 };
