@@ -100,7 +100,54 @@ const Sermons = () => {
         </div>
       </section>
 
-      <LatestSermon />
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="bg-red-500 rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden relative shadow-lg"
+          >
+            <div className="absolute -right-10 -bottom-10 w-96 h-96 rounded-full bg-red-600/35 pointer-events-none" />
+
+            <div className="w-full lg:w-3/5 space-y-6 relative z-10 flex flex-col items-start">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
+                Never Miss a Message
+              </h2>
+              <p className="text-white/95 text-sm sm:text-base leading-relaxed font-light">
+                Catch our latest livestreams, sermons, and worship experiences
+                on our YouTube channel.
+              </p>
+              <div>
+                <a
+                  href={youTubeChannelUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-6 py-3.5 bg-white text-red-600 hover:bg-gray-50 rounded-2xl text-sm font-bold shadow-md active:scale-98 transition-all"
+                >
+                  Go To Youtube
+                  <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.108C19.522 3.5 12 3.5 12 3.5s-7.522 0-9.388.555a3.002 3.002 0 0 0-2.11 2.108C0 8.029 0 12 0 12s0 3.971.502 5.837a3.003 3.003 0 0 0 2.11 2.108C4.478 20.5 12 20.5 12 20.5s7.522 0 9.388-.555a3.003 3.003 0 0 0 2.11-2.108C24 15.971 24 12 24 12s0-3.971-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div className="w-full lg:w-2/5 flex justify-center relative z-10">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full border-4 border-white/20 overflow-hidden bg-red-600 shadow-inner flex items-center justify-center">
+                <img
+                  src={Images.ourIdentityImg}
+                  alt="Pastor preaching"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* <LatestSermon /> */}
 
       {/* <section className="py-20 bg-[#F9FAFB] border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -158,53 +205,6 @@ const Sermons = () => {
           </div>
         </div>
       </section> */}
-
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="bg-red-500 rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden relative shadow-lg"
-          >
-            <div className="absolute -right-10 -bottom-10 w-96 h-96 rounded-full bg-red-600/35 pointer-events-none" />
-
-            <div className="w-full lg:w-3/5 space-y-6 relative z-10 flex flex-col items-start">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
-                Never Miss a Message
-              </h2>
-              <p className="text-white/95 text-sm sm:text-base leading-relaxed font-light">
-                Catch our latest livestreams, sermons, and worship experiences
-                on our YouTube channel.
-              </p>
-              <div>
-                <a
-                  href={youTubeChannelUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3.5 bg-white text-red-600 hover:bg-gray-50 rounded-2xl text-sm font-bold shadow-md active:scale-98 transition-all"
-                >
-                  Go To Youtube
-                  <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
-                    <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.108C19.522 3.5 12 3.5 12 3.5s-7.522 0-9.388.555a3.002 3.002 0 0 0-2.11 2.108C0 8.029 0 12 0 12s0 3.971.502 5.837a3.003 3.003 0 0 0 2.11 2.108C4.478 20.5 12 20.5 12 20.5s7.522 0 9.388-.555a3.003 3.003 0 0 0 2.11-2.108C24 15.971 24 12 24 12s0-3.971-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <div className="w-full lg:w-2/5 flex justify-center relative z-10">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full border-4 border-white/20 overflow-hidden bg-red-600 shadow-inner flex items-center justify-center">
-                <img
-                  src={Images.ourIdentityImg}
-                  alt="Pastor preaching"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };
